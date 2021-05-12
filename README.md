@@ -1,68 +1,20 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Build and Deploy Modern Web Applications with AWS Amplify - Base Code 
 
-## Available Scripts
+This project repository serves as the base code for the workshop built for the AWS ASEAN SA LEAP Day (May 2021) - Study Jam Room 3. Resources associated with the study jam will be documented [here](https://master.dymygafqleecg.amplifyapp.com/). If you any feedback or require any additional information, please reach out to me at thaiwg@amazon.com.
+ 
+### What is this workshop for? 
+Through this workshop, developers will start with a modern static web application built with the ReactJS framework - which is reminiscent to the needs of many of our customers across Enterprises, Digital Native Businesses and Startups. They will host the application on AWS through the Amplify framework, and incorporate additional modules that are available within the Amplify arsenal. Those modules include common customer use-cases of a CI/CD pipeline, user authentication, storage, and even chatbot integration.
 
-In the project directory, you can run:
+Module 1 – Local Deployment
+Module 2 – Automated Deployments to AWS Amplify
+Module 3 – User Authentication
+Module 4 – Integrating Storage Capabilities
+Module 5 – Chatbot Integration
 
-### `npm start`
+### Who is this Workshop for?
+This workshop is an introductory course aimed at developers/SAs with limited hands-on experience with modern web development technologies and hands-on experience with AWS Amplify.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### What does this workshop aim to accomplish? 
+After completing this workshop, developers/SAs will be provided with a high level understanding of the Amplify framework and be better enabled to help customers address common workload needs of a modern web application.
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
