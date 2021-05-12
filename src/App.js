@@ -23,7 +23,7 @@ const App = () => {
              <Route exact path="/home" component={Home} />
              <Route exact path="/prelogin" component={PreLoginPage} />
             <Route exact path="/flight" component={FlightPage} />
-            <Route exacoct path="/hotel" component={HotelPage} /> 
+            <Route exact path="/hotel" component={HotelPage} /> 
             <Route component={Home} />
           </Switch>
           <Footer />
