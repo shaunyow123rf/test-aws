@@ -74,21 +74,6 @@ return (
     setprofileModal(true)  
   }
 
-//   const handleFileChange=e=>{
-//     const file = e.target.files[0]
-//     console.log("File Type",file.type)
-//     if (file.type === "image/jpeg" || file.type==="image/png") {
-//       setisError(false); 
-//     setprofileState({
-//       fileUrl:URL.createObjectURL(file),
-//       file,
-//       filename:username
-//     })
-//   } else { 
-//     setisError(true); 
-//   }
-// }
-
   const showProfilepic=()=>{
     if (photoUploaded===false) {
       return (
