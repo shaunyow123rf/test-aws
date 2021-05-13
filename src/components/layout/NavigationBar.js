@@ -13,7 +13,7 @@ import Row from "react-bootstrap/Row"
 import {SyncLoader} from "react-spinners"
 import Col from "react-bootstrap/Col"
 
-import { Auth } from 'aws-amplify';
+import { Auth, Storage } from 'aws-amplify';
 
 const NavigationBar = (props) => {
   const [click, setClick] = useState(false);
@@ -21,6 +21,14 @@ const NavigationBar = (props) => {
   const [isLoading, setisLoading] = useState(false);
   const [photoUploaded, setphotoUploaded] = useState(false)
   const [isError, setisError] = useState(false)
+  const [username,setUsername] = useState("")
+
+  useEffect(() => {
+    Auth.currentAuthenticatedUser({
+      bypassCache: false 
+  }).then(user => setUsername(user.username))
+  .catch(err => console.log(err));
+  }, []);
 
   useEffect(() => {
   // Insert code here
@@ -66,30 +74,30 @@ return (
     setprofileModal(true)  
   }
 
-  const handleFileChange=e=>{
-    const file = e.target.files[0]
-    console.log("File Type",file.type)
-    if (file.type === "image/jpeg" || file.type==="image/png") {
-      setisError(false); 
-    setprofileState({
-      fileUrl:URL.createObjectURL(file),
-      file,
-      filename:props.username
-    })
-  } else { 
-    setisError(true); 
-  }
-}
+//   const handleFileChange=e=>{
+//     const file = e.target.files[0]
+//     console.log("File Type",file.type)
+//     if (file.type === "image/jpeg" || file.type==="image/png") {
+//       setisError(false); 
+//     setprofileState({
+//       fileUrl:URL.createObjectURL(file),
+//       file,
+//       filename:username
+//     })
+//   } else { 
+//     setisError(true); 
+//   }
+// }
 
   const showProfilepic=()=>{
     if (photoUploaded===false) {
       return (
-        <Link to="/home" onClick={profileOpen}> <AccountCircleIcon style={{marginBottom:"3px", opacity:"0.7"}} />  {props.username} </Link>
+        <Link to="/home" onClick={profileOpen}> <AccountCircleIcon style={{marginBottom:"3px", opacity:"0.7"}} />  {username} </Link>
       )
     }
     else if (photoUploaded===true) {
       return (
-        <Link to="/home" onClick={profileOpen}>  <Image src={profileState.fileUrl} roundedCircle style={{height:'23px',width:"23px", marginRight:"5px", marginBottom:"2px"}} /> {props.username} </Link>
+        <Link to="/home" onClick={profileOpen}>  <Image src={profileState.fileUrl} roundedCircle style={{height:'23px',width:"23px", marginRight:"5px", marginBottom:"2px"}} /> {username} </Link>
       )
     }
   }
@@ -101,13 +109,14 @@ return (
     setprofileState({
       fileUrl:URL.createObjectURL(file),
       file,
-      filename:props.username
+      filename:username
     });
     setphotoUploaded(true)
   } else {
     setisError(true)
   }
-  }, [])
+  }, [username])
+
   const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
 
   const showProfilePic = () =>{
@@ -297,7 +306,7 @@ return (
 </Modal>
 </li>
 <li className="nav-links-join" >
-  <Button variant="light" size="sm" className="join-button" onClick={()=>{Auth.signOut({ global: true })}}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
+  <Button variant="light" size="sm" className="join-button" onClick={()=>{Auth.signOut()}}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
       </ul>
       </Fragment>
     </nav>
