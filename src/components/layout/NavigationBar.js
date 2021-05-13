@@ -13,6 +13,8 @@ import Row from "react-bootstrap/Row"
 import {SyncLoader} from "react-spinners"
 import Col from "react-bootstrap/Col"
 
+import { Auth } from 'aws-amplify';
+
 const NavigationBar = (props) => {
   const [click, setClick] = useState(false);
   const [profileModal, setprofileModal] = useState(false);
@@ -295,7 +297,7 @@ return (
 </Modal>
 </li>
 <li className="nav-links-join" >
-  <Button variant="light" size="sm" className="join-button" onClick={props.signOutMethod}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
+  <Button variant="light" size="sm" className="join-button" onClick={()=>{Auth.signOut({ global: true })}}> <p className="join-button-text"> <center> Sign Out </center> </p></Button></li>
       </ul>
       </Fragment>
     </nav>
